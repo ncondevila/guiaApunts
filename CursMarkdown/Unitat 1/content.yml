@@ -1,0 +1,10 @@
+--
+id: es.gva.cefire.valencia.md
+title: Introducció a Markdown
+items:
+  - title: 1. El llenguatge Markdown
+    file: 1.Markdown.html
+  - title: 2. Edició de fitxers amb Markdown
+    file: 2.Edició.html
+  - title: 3. Correcció ortogràfica
+    file: 3.Corrector.html

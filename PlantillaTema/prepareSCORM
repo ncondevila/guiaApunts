@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#cp ${HOME}/.local/share/PlantillaTema/content.yml .
+
+echo "--" > ./content.yml
+echo "id: com.ieseljust.depinf.cicle.modul.tema" >> ./content.yml
+echo "title: Aci el títol" >> ./content.yml
+
+echo "items:" >> ./content.yml
+for FILE in `ls *.md`; do
+   TITLE=`head $FILE | grep "title:"`;
+   FILENAME="${FILE%.md}.html"
+   echo "  - $TITLE" >> ./content.yml
+   echo "    file: ${FILENAME}" >> ./content.yml
+done

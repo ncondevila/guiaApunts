@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>3. Correcció ortogràfica</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        ul.task-list{list-style: none;}
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {   }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ff0000; } /* Alert */
+        code span.an { color: #008000; } /* Annotation */
+        code span.at { } /* Attribute */
+        code span.bu { } /* BuiltIn */
+        code span.cf { color: #0000ff; } /* ControlFlow */
+        code span.ch { color: #008080; } /* Char */
+        code span.cn { } /* Constant */
+        code span.co { color: #008000; } /* Comment */
+        code span.cv { color: #008000; } /* CommentVar */
+        code span.do { color: #008000; } /* Documentation */
+        code span.er { color: #ff0000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.im { } /* Import */
+        code span.in { color: #008000; } /* Information */
+        code span.kw { color: #0000ff; } /* Keyword */
+        code span.op { } /* Operator */
+        code span.ot { color: #ff4000; } /* Other */
+        code span.pp { color: #ff4000; } /* Preprocessor */
+        code span.sc { color: #008080; } /* SpecialChar */
+        code span.ss { color: #008080; } /* SpecialString */
+        code span.st { color: #008080; } /* String */
+        code span.va { } /* Variable */
+        code span.vs { color: #008080; } /* VerbatimString */
+        code span.wa { color: #008000; font-weight: bold; } /* Warning */
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="css/style.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+      
+</head>
+
+<body>
+    <!-- Botó per obrir el menú -->
+        <button class="openbtn" onclick="switchMenu()">&#9776;</button>     <!-- End -->
+
+         <header id="title-block-header">
+        <h1 class="title">3. Correcció ortogràfica</h1>
+          
+    </header>
+     
+    <!-- Panell lateral per al menú del docuement-->
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="switchMenu()">&times;</a>
+        <!-- Fi PAnell lateral -->
+
+
+        <nav id="TOC" role="doc-toc">
+                        <h2 id="toc-title">Continguts</h2>
+             <ul>
+<li><a href="#correctors-ortogràfics-i-markdown"><span class="toc-section-number">1</span> Correctors ortogràfics i Markdown</a>
+<ul>
+<li><a href="#correcció-en-typora"><span class="toc-section-number">1.1</span> Correcció en Typora</a></li>
+<li><a href="#correcció-amb-visual-studio-code"><span class="toc-section-number">1.2</span> Correcció amb Visual Studio Code</a></li>
+</ul></li>
+</ul>
+        </nav>
+    </div>
+    <!-- Tancant el panell lateral -->
+
+     <h1 data-number="1" id="correctors-ortogràfics-i-markdown"><span class="header-section-number">1</span> Correctors ortogràfics i Markdown</h1>
+<p>Un dels principals avantatges dels processadors de textos és que incorporen un corrector, que detecta errors ortogràfics mentre escrivim.</p>
+<p>Els editors, per norma general, no solen oferir aquesta possibilitat, per la qual cosa, quan editem textos en format Markdown mitjançant un editor de text, si no posem remei, hauríem d’anar molt amb compte de no cometre errors ortogràfics. No obstant això, tot i que no sol ser tan trivial com en un processador de textos, aquesta correcció en un editor de text sí que sol ser possible.</p>
+<p>En aquest document, anem a veure com podríem realitzar la correcció ortogràfica en dues eines per treballar amb Markdown: Typora y Visual Studio Code.</p>
+<h2 data-number="1.1" id="correcció-en-typora"><span class="header-section-number">1.1</span> Correcció en Typora</h2>
+<p>L’eina Typora, ja vam comentar que era una eina bastant senzilla alhora que potent, ja que ens permet l’escriptura amb Markdown mentre converteix el que escrivim directament al format final en el mateix document.</p>
+<p>Si volem activar la correcció automàtica en Typora, només caldrà que busquem l’opció <em>Spell Check…</em> al menú d’edició. En aquest moment, se’ns donarà l’opció d’escollir l’idioma. També podríem haver arribat ací, amb el botó de configuració de l’idioma, ubicat a la part inferior dreta de la finestra.</p>
+<figure>
+<img src="img/typoraOrto1.png" style="width:15cm" alt="Configuració de l’idioma a Typora" /><figcaption aria-hidden="true">Configuració de l’idioma a Typora</figcaption>
+</figure>
+<p>La primera vegada que l’activem, ens demanarà descarregar el diccionari. Una vegada fet, podem apreciar com els textos ja apareixen corregits.</p>
+<figure>
+<img src="img/typoraOrto2.png" style="width:15cm" alt="Configuració de l’idioma a Typora" /><figcaption aria-hidden="true">Configuració de l’idioma a Typora</figcaption>
+</figure>
+<h2 data-number="1.2" id="correcció-amb-visual-studio-code"><span class="header-section-number">1.2</span> Correcció amb Visual Studio Code</h2>
+<p>Tot i que l’editor VS Code està pensat per a la programació, ofereix també la possibilitat de realitzar correccions de textos mitjançant extensions.</p>
+<p>L’extensió amb la què treballarem s’anomena <em>LTeX</em>, que fa ús del servei de traducció en línia <a href="https://languagetool.org/"><em>LanguageTool</em></a>.</p>
+<h3 data-number="1.2.1" id="lextensió-ltex"><span class="header-section-number">1.2.1</span> L’extensió LTeX</h3>
+<p>L’extensió LTeX proporciona correcció gramatical per a diversos llenguatges de marcat en Visual Studio Code, fent ús, d’un corrector extern com és l’eina <em>LanguageTool</em>. A més de Markdown, admet altres tipus de documents de marcat.</p>
+<blockquote>
+<p><strong>LanguageTool</strong></p>
+<p>LanguageTool és un assistent d’escriptura intel·ligent pensat per a navegadors web i processadors de text, que ofereix una API (Application Programming Interface) a través de la qual, altres aplicacions poden utilitzar el servei a través d’Internet.</p>
+</blockquote>
+<p>Aquesta extensió, a més de la correcció ortogràfica, també corregeix errors gramaticals i estilístics. Per tal de realitzar-ne la instal·lació, només haurem d’anar a l’activitat de VSCode d’<em>extensions</em>, i buscar l’extensió LTeX:</p>
+<figure>
+<img src="img/ltexExtension.png" style="width:15cm" alt="L’extensió LTeX" /><figcaption aria-hidden="true">L’extensió LTeX</figcaption>
+</figure>
+<p>Una vegada localitzada, només haurem de fer clic en el botó <em>Instal·la</em> per començar a utilitzar-la.</p>
+<p>D’aquesta manera, quan anem escrivint, tot i que és possible que siga un procés lent, sobretot si els textos són llargs, l’editor anirà realitzant la correcció ortogràfica. En el moment en què trobe una errada, ens la marcarà amb un subratllat.</p>
+<p>Si situem el cursor del ratolí a sobre l’error, ens apareixerà un xicotet diàleg emergent amb la descripció de l’error, i dos opcions: <em>View Problem</em>, per consultar detalls de l’errada, i <em>Quick Fix</em>, per veure les possibles solucions a l’error:</p>
+<figure>
+<img src="img/ltex1.png" style="width:15cm" alt="L’extensió LTeX" /><figcaption aria-hidden="true">L’extensió LTeX</figcaption>
+</figure>
+<p>Si fem clic en aquesta segona, ens mostrarà diversos suggeriments per realitzar la correcció, així com afegir la paraula al diccionari, amagar un <em>fals positiu</em> o bé desactivar la regla. Naturalment, també podrem realitzar la correcció de forma manual:</p>
+<figure>
+<img src="img/ltex2.png" style="width:10cm" alt="L’extensió LTeX" /><figcaption aria-hidden="true">L’extensió LTeX</figcaption>
+</figure>
+<h4 data-number="1.2.1.1" id="sobre-la-freqüència-de-comprovació-i-les-correccions-manuals"><span class="header-section-number">1.2.1.1</span> Sobre la freqüència de comprovació i les correccions manuals</h4>
+<p>Quan corregim automàticament una errada ortogràfica, l’extensió LTeX és conscient que aquesta ja està corregida i elimina directament el subratllat.</p>
+<p>Aquesta extensió, per tal de no ralentir l’editor, no realitza continuaent correccions, sino que ho fa cada cert temps (aquesta freqüència es pot modificar a través del paràmetre <code>LTeX: Check Frequency</code>, encara que tampoc és recomanable, per no sobrecarregar l’editor)</p>
+<p>Cal tindre açò en compte, especialment quan fem correccions de forma manual, ja que l’eliminació del subratllat no és instantània. A més, és bastant freqüent que les modificacions que fem a mà facen que alguns subratllats es <em>desplacen</em> fins que es torne a invocar el corrector de nou.</p>
+<p>Per altra banda, si desitgem invocar el corrector en un moment donat, podem fer-ho a través de la <em>Paleta d’ordres</em>, accessible mitjançant la combinació de teclat <code>Ctrl</code>+<code>Majúscules</code>+<code>P</code> i buscant l’ordre LTeX: <em>Check current Document</em>.</p>
+<figure>
+<img src="img/ltex5.png" style="width:10cm" alt="L’extensió LTeX" /><figcaption aria-hidden="true">L’extensió LTeX</figcaption>
+</figure>
+<h4 data-number="1.2.1.2" id="limitacions-amb-languagetool"><span class="header-section-number">1.2.1.2</span> Limitacions amb LanguageTool</h4>
+<p>Com hem comentat, l’extensió LTeX utilitza un servidor extern com és <a href="https://languagetool.org/"><em>LanguageTool</em></a>.</p>
+<p>Aquest servei s’ofereix <a href="(https://dev.languagetool.org/public-http-api)">de forma pública a través d’una API</a> a través de la qual, altres aplicacions poden utilitzar-la a través d’Internet. El problema és que aquest servidor públic aplica certes restriccions relatives a la quantitat de peticions que es poden realitzar en un temps donat.</p>
+<p>L’alternativa per la qual podem optar, per tal de no estar subjectes a aquestes restriccions, és oferir al nostre ordinador el mateix servei, tal com veurem al següent apartat.</p>
+<h3 data-number="1.2.2" id="el-servei-languagetool"><span class="header-section-number">1.2.2</span> El servei LanguageTool</h3>
+<p>El servidor de LanguageTool es distribueix sota una llicència lliure, de manera que podem descarregar-lo i executar-lo al nostre ordinador.</p>
+<p>A més, aquest es distribueix ja empaquetat com a una aplicació Java, de manera que, en línies generals, només haurem de descarregar el paquet, descomprimir-lo i executar-lo amb Java.</p>
+<p>Per a això, seguirem els següents passos:</p>
+<ol type="1">
+<li><p>En primer lloc, descarreguem el paquet <a href="https://languagetool.org/download/LanguageTool-stable.zip">LanguageTool-stable.zip</a> des de la web del languageTool.</p></li>
+<li><p>Descomprimim el fitxer descarregat en la nostra carpeta d’usuari, per exemple, el que ens crearà la carpeta <em>LanguageTool-5.4</em>.</p>
+<p>Si ho fem a través de la línia d’ordre farím el següent. Ens situaríem a la nostra carpeta d’usuari i descarregaríem directament el fitxer comprimit amb:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> wget https://languagetool.org/download/LanguageTool-stable.zip</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span></code></pre></div>
+<p>I ara el descomprimiríem a la mateixa carpeta amb:</p>
+<pre><code>$ unzip LanguageTool-stable.zip
+...</code></pre></li>
+<li><p>Ara, per tal d’executar el servidor de LanguageTool, necessitarem l’entorn d’execució de Java (JRE). Si el tenim instal·lat al nostre equip, només caldrà situar-nos dins la carpeta del <em>LanguageTool-5.4</em>:</p>
+<pre><code>$ cd LanguageTool-5.4</code></pre></li>
+<li><p>I llançar-lo amb la següent ordre:</p>
+<pre><code>java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port 8081 --allow-origin &quot;*&quot;</code></pre>
+<p>Amb açò el que fem és que el servidor estiga disponible al nostre ordinador a través del port 8081, i permeta qualsevol connexió.</p>
+<p>Tingueu en compte que veurem una eixida per la terminal semblant a la següent:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">2021-09-11</span> 09:23:02.420 +0200 INFO  org.languagetool.server.DatabaseAccess Not setting up database access, dbDriver is not configured</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">2021-09-11</span> 07:23:02 +0000 WARNING: running in HTTP mode, consider running LanguageTool behind a reverse proxy that takes care of encryption <span class="er">(</span><span class="ex">HTTPS</span><span class="kw">)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">2021-09-11</span> 07:23:03 +0000 Setting up thread pool with 10 threads</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">2021-09-11</span> 07:23:03 +0000 Starting LanguageTool 5.4 <span class="er">(</span><span class="ex">build</span> date: 2021-06-25 10:24:16 +0000, ba046d4<span class="kw">)</span> <span class="ex">server</span> on http://localhost:8081...</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">**2021-09-11</span> 07:23:03 +0000 Server started<span class="pp">**</span></span></code></pre></div>
+<p><strong>Aneu amb compte i no tanqueu aquesta finestra, ja que quan ho feu, aturareu el servidor.</strong></p></li>
+</ol>
+<blockquote>
+<p><strong>Si no tenim el JRE…</strong></p>
+<p>El JRE (Java Runrime Environment), o entorn d’execució de Java, que ofereix junt amb certes llibreríes del sistema, la màquina virtual de Java, que és la que s’encarrega d’executar aquest tipus d’aplicacions.</p>
+<p>LliureX ja disposa del JRE preinstal·lat pe omissió. En cas que no el tinguem instal·lat al nostre equip (no es troba l’ordre <code>java</code>), podem instal·lar el paquet <code>default-jre</code>, des de qualsevol gestor de programari.</p>
+<p>Per exemple, per a fer-ho des de la terminal directament escriuríem:</p>
+<pre class="..."><code>$ sudo apt update
+...
+$ sudo apt install default-jre</code></pre>
+</blockquote>
+<h4 data-number="1.2.2.1" id="configurant-ltex-per-al-servidor-local"><span class="header-section-number">1.2.2.1</span> Configurant LTeX per al servidor local</h4>
+<p>Ara només ens quedarà indicar-li a l’extensió d’LTeX que volem fer ús del nostre servidor local, en lloc del servidor d’Internet per defecte.</p>
+<p>Això ho aconseguim modificant alguns paràmetres de la configuració d’aquesta extensió.</p>
+<p>Per tal d’obrir la finestra de configuració de VSCode, ho farem a través del menú <em>File &gt; Preferences &gt; Settings</em>, o bé directament prement la combinació de tecles <code>Ctrl</code>+<code>,</code> (tecles <em>Control</em> i <em>coma</em>).</p>
+<figure>
+<img src="img/prefsVSCode.png" style="width:10cm" alt="Configuració de les preferències" /><figcaption aria-hidden="true">Configuració de les preferències</figcaption>
+</figure>
+<p>Açò ens mostrarà tots els paràmetres de configuració. Podem buscar el que desitgem a la barra de cerca que apareix a la part superior. Així doncs, ens situem en aquesta i comencem a buscar <code>ltex.ltex-ls</code>, ja ens apareix la primera opció el paràmetre <em>Ltex › Ltex-ls: Language Tool Http Server Uri</em>, que en principi no tindrà valor.</p>
+<p>El que farem serà configurar el valor d’aquest paràmetre com a:</p>
+<pre><code>http://localhost:8081</code></pre>
+<figure>
+<img src="img/ltex3.png" style="width:15cm" alt="Preferències d’LTeX" /><figcaption aria-hidden="true">Preferències d’LTeX</figcaption>
+</figure>
+<p>Que és com s’ha configurat el nostre servidor. D’aquesta manera, ja utilitzarem aquest en lloc del servei a Internet.</p>
+<h4 data-number="1.2.2.2" id="selecció-de-lidioma"><span class="header-section-number">1.2.2.2</span> Selecció de l’idioma</h4>
+<p>Una altra opció que ens serà d’utilitat, és la de canviar l’idioma, que farem a través de la modificació del paràmetre <code>ltex.language</code>:</p>
+<figure>
+<img src="img/ltex4.png" style="width:15cm" alt="Selecció d’idioma" /><figcaption aria-hidden="true">Selecció d’idioma</figcaption>
+</figure>
+<p>Amb això serà suficient, i no serà necessari instal·lar cap extensió específica per a l’idioma.</p> 
+    <script src="js/nav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>2. Edició de fitxers amb Markdown</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        ul.task-list{list-style: none;}
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="css/style.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+      
+</head>
+
+<body>
+    <!-- Botó per obrir el menú -->
+        <button class="openbtn" onclick="switchMenu()">&#9776;</button>     <!-- End -->
+
+         <header id="title-block-header">
+        <h1 class="title">2. Edició de fitxers amb Markdown</h1>
+          
+    </header>
+     
+    <!-- Panell lateral per al menú del docuement-->
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="switchMenu()">&times;</a>
+        <!-- Fi PAnell lateral -->
+
+
+        <nav id="TOC" role="doc-toc">
+                        <h2 id="toc-title">Continguts</h2>
+             <ul>
+<li><a href="#edició-de-fitxers-markdown"><span class="toc-section-number">1</span> Edició de fitxers Markdown</a>
+<ul>
+<li><a href="#visual-studio-code"><span class="toc-section-number">1.1</span> Visual Studio Code</a></li>
+</ul></li>
+</ul>
+        </nav>
+    </div>
+    <!-- Tancant el panell lateral -->
+
+     <h1 data-number="1" id="edició-de-fitxers-markdown"><span class="header-section-number">1</span> Edició de fitxers Markdown</h1>
+<p>Markdown es un format de fitxer de text, pel que qualsevol editor de text senzill ens serà suficient.</p>
+<p>No obstant això, existeixen diverses eines especialitzades en l’edició d’aquest tipus de fitxers, tant en entorns d’escriptori com web. Els que es mostren a continuació són alguns d’ells, però hi ha molts més:</p>
+<ul>
+<li><strong>Editors en línia</strong>
+<ul>
+<li>Dillinger: <a href="https://dillinger.io/">https://dillinger.io/</a></li>
+<li>Draft: <a href="https://draftin.com/">https://draftin.com/</a></li>
+<li>Stackedit: <a href="https://stackedit.io/">https://stackedit.io/</a></li>
+</ul></li>
+<li><strong>Editors d’escriptori</strong>
+<ul>
+<li>Typora: <a href="https://typora.io/">https://typora.io/</a></li>
+<li>WriteMonkey: <a href="https://writemonkey.com/">https://writemonkey.com/</a></li>
+<li>Haroopad: <a href="http://pad.haroopress.com/">http://pad.haroopress.com/</a></li>
+</ul></li>
+</ul>
+<p>La majoria d’ells consisteixen en una finestra dividida on podem escriure en format Markdown a una part, i veure’n el resultat en directe al costat. El cas de Typora és un tant especial, ja que ens permeten escriure en Markdown i anar renderitzant automàticament el que fem, acostant-se al que sería un editor tipus WYSIWYG.</p>
+<h2 data-number="1.1" id="visual-studio-code"><span class="header-section-number">1.1</span> Visual Studio Code</h2>
+<p>En aquest document, us presentarem l’editor Visual Studio Code (en avant VSCode), de Microsoft, que tot i tractar-se d’un editor per a l’edició del codi font de programes informàtics, suporta directament el llenguatge <em>Markdown</em>, i ofereix una previsualització del document.</p>
+<p>VSCode és un editor lleuger i multiplataforma, amb una interfície bastant neta, una extensa paleta d’ordres a les que podem accedir per dreceres de teclat, terminal integrada, suport al control de versions, etc. Però una de les coses més interessants, és que ens permet ampliar la seua funcoinalitat mitjançant extensions. Una d’aquestes extensions, la <em>Markdown All In One</em> aporta diferents utilitats per a Markdown, com ara tecles d’accés ràpid o suport a taules de continguts.</p>
+<h3 data-number="1.1.1" id="installació-de-visual-studio-code"><span class="header-section-number">1.1.1</span> Instal·lació de Visual Studio Code</h3>
+<p>L’opció d’instal·lació més senzilla és descarregar-lo directament des de la web <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a> i instal·lar-lo mijançant el gestor de paquets que estiguem utilitzant (Discover, EPI, Gdebi, etc.).</p>
+<p>Disposeu de més informació sobre el procés d’instal·lació tant en sisemes Linux com Windows a la web de l’editor:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/setup/linux">https://code.visualstudio.com/docs/setup/linux</a></li>
+<li><a href="https://code.visualstudio.com/docs/setup/windows">https://code.visualstudio.com/docs/setup/windows</a></li>
+</ul>
+<h3 data-number="1.1.2" id="presa-de-contacte-amb-vscode"><span class="header-section-number">1.1.2</span> Presa de contacte amb VSCode</h3>
+<p>Una vegada instal·lat, tenim el Visual Studio Code accessible des del menú principal del sistema, dins de <em>Programació</em>.</p>
+<p>La primera vegada que l’obrim ens demanarà si volem treballar amb un tema clar o fosc. Triarem un qualsevol d’ells.</p>
+<p>La interfície general de VSCode presenta un aspecte semblant al següent:</p>
+<figure>
+<img src="img/UI.png" width="450" alt="Interfície de VSCode" /><figcaption aria-hidden="true">Interfície de VSCode</figcaption>
+</figure>
+<p>On tenim els següents elements:</p>
+<ul>
+<li>La <strong>barra d’activitats</strong>, situada a l’esquerra, amb cinc activitats principals: L’<strong>explorador de fitxers</strong>, la de <strong>Búsqueda de text</strong>, la de <strong>control de versions amb Git</strong>, la de <strong>depuració</strong>, i la d’<strong>extensions.</strong> Cadascuna d’aquestes activitats, ens obrirà una altra barra lateral al costat amb les diferents possibilitats que ofereix l’activitat.</li>
+<li>La <strong>finestra de benvinguda</strong>, situada a la part principal de l’editor, que ocupa la part superior, i que ens ofereix algunes <strong>opcions d’inici</strong> com crear un fitxer nou, obrir una carpeta o afegir un espai de treball. A més, disposem també d’una secció de <strong>fitxers recents</strong>, inicialment buida, i de diversos <strong>opcions de personalització</strong>, com extensions per suportar alters llenguatges, dreceres de teclat, i temàtica de l’editor. En aquesta finestra, també disposem d’algunes opcions d’<strong>Ajuda</strong>, i alguns <em>tips</em> per aprendre, com la llista d’ordres o una ullada a la interfície.</li>
+<li>Diversos <strong>panells</strong>, situats al davall de la finestra principal de l’editor, i que mostraran informació sobre la depuració, errors, avisos, o bé la terminal integrada a VSCode.</li>
+<li>A la part inferior, distingim finalment la barra d’estat, amb informació sobre el projecte i els fitxers oberts.</li>
+</ul>
+<p>A les últimes versions, quan obrim una carpeta nova, també ens demana que confirmem si <em>confiem</em> en qui ha fet el codi que hi ha en aquesta carpeta:</p>
+<figure>
+<img src="img/vscode2.png" width="450" alt="Interfície de VSCode" /><figcaption aria-hidden="true">Interfície de VSCode</figcaption>
+</figure>
+<p>Disposeu de més informació sobre la interfície de VSCode en:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/getstarted/userinterface">https://code.visualstudio.com/docs/getstarted/userinterface</a></li>
+</ul>
+<h3 data-number="1.1.3" id="treballant-amb-vscode-i-markdown"><span class="header-section-number">1.1.3</span> Treballant amb VSCode i Markdown</h3>
+<p>Amb VSCode podem editar fitxer directament, però el més interessant, és que podem obrir una carpeta i treballar directament sobre els fitxers que hi conté i explorar-los amb l’activitat de l’explorador de fitxers integrat.</p>
+<p>Per a això, només hem de fer clic al botó <em>Open Folder</em> ubicat a l’activitat de l’explorador de fitxers:</p>
+<figure>
+<img src="img/ObrirCarpeta.png" style="width:5cm" alt="Obrint una carpeta" /><figcaption aria-hidden="true">Obrint una carpeta</figcaption>
+</figure>
+<p>Què ens demanarà que seleccionem una carpeta per obrir. Al nostre cas, hem triat una carpeta anomenada <em>DocumentsMarkdown</em>.</p>
+<p>Una vegada obrim la carpeta, se’ns mostrarà a l’activitat de l’explorador de fitxers l’estuctura d’arbre corresponent a la carpeta, amb tots els fitxers i carpetes que conté. Al nostre cas, aquest carpeta conté dos carpetes més: <em>Unitat 1</em> i <em>Unitat 2</em>:</p>
+<figure>
+<img src="img/contingutCarpeta.png" style="width:5cm" alt="Contingut de la carpeta" /><figcaption aria-hidden="true">Contingut de la carpeta</figcaption>
+</figure>
+<p>Si ens fixem, al costat del nom de la carpeta principal apareixen quatre icones, amb el següent significat:</p>
+<ul>
+<li>El primer, per crear un nou document, en la carpeta o subcarpeta que tinguem seleccionada.</li>
+<li>El segon per crear una carpeta nova, en la carpeta o subcarpeta que tinguem seleccionada.</li>
+<li>El tercer per refrescar la vista, per si hem afegit fitxers a través d’altres aplicacions a la carpeta, i</li>
+<li>El quart serveix per comprimir l’estructura d’arbre, deixant només els elements que estan al primer nivell en la carpeta principal.</li>
+</ul>
+<p>Si el que volem ara és crear un nou document, farem click al primer d’aquests botons, de manera que ens demanarà el nom del fitxer per afegir-lo a la carpeta en què estiguem.</p>
+<blockquote>
+<p><strong>Important</strong></p>
+<p>L’extensió d’un fitxer de text en format Markdown és <code>.md</code>. Tot i que es tracta d’un fitxer de text, pel que podría ser <code>.txt</code> o qualsevol altre, convé utilitzar aquesta extensió perquè les aplicacions el reconeguen com a tal.</p>
+<p>En VSCode, si es fixeu, apareixerà una icona amb una fletxa cap avall, indicant que es tracta d’un fitxer Markdown.</p>
+</blockquote>
+<figure>
+<img src="img/fitxerNou.png" style="width:5cm" alt="Creació d’un fitxer nou" /><figcaption aria-hidden="true">Creació d’un fitxer nou</figcaption>
+</figure>
+<p>Una vegada creat, podem començar a escriure directament al fitxer.</p>
+<p>A la part superior dreta de la finestra de l’editor, veureu que apareixen diverses icones. Aquestes poden variar segons les extensions que tingam instal·lades al nostre equip.</p>
+<p>Una d’aquestes icones és un rectangle dividit amb una lupa. Aquesta icona és la que ens permetrà activar la vista dividida, i veure a la part esquerra de la finestra el text que escrivim, i a la dreta una previsualització d’aquest.</p>
+<figure>
+<img src="img/openPreview.png" style="width:6cm" alt="Obrint la previsualització" /><figcaption aria-hidden="true">Obrint la previsualització</figcaption>
+</figure>
+<figure>
+<img src="img/vistaPRevia.png" style="width:15cm" alt="Vista prèvia" /><figcaption aria-hidden="true">Vista prèvia</figcaption>
+</figure>
+<p>Per tancar aquesta vista prèvia, només cal que fem click al símbol de la creu (<code>x</code>) que apareix al costat del nom del fitxer en la previsualització.</p>
+<h3 data-number="1.1.4" id="installació-de-plugins-en-vscode"><span class="header-section-number">1.1.4</span> Instal·lació de plugins en VSCode</h3>
+<p>VSCode és un editor lleuger, i alhora extremadament flexible mitjançant plugins o extensions.</p>
+<p>Per afegir extensions, fem clic a l’<strong>activitat d’extensions</strong>, ubicada cap a la part inferior de la barra d’activitats. En ella tenim disponible un quadre de cerca, al que podem buscar qualsevol cosa. Si escrivim <em>Markdown</em>, veurem totes les extensions existens relacionades amb aquest:</p>
+<figure>
+<img src="./img/md_ext.png" style="width:17cm" alt="Extensioons markdown" /><figcaption aria-hidden="true">Extensioons markdown</figcaption>
+</figure>
+<p>Com hem vist, en principi, no necessitem cap extensió per treballar directament amb Markdown en VSCode i fer-ne una previsualització. No obstant això, extensions com la comentada <em>Markdown All In One</em> ens aporta diferents utilitats interessants. A mesura que avancem el curs, veurem algunes d’aquestes extensions d’interès.</p>
+<p>Si volem instal·lar l’extensió, només caldrà que fem clic al botó <em>Install</em> que apareix al costat de l’extensió o en la descripció d’aquesta.</p> 
+    <script src="js/nav.js"></script>
+</body>
+
+</html>

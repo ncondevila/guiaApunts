@@ -1,0 +1,11 @@
+--
+id: com.ieseljust.depinf.cicle.modul.tema
+title: Exemple per generar un curs SCORM
+
+items:
+  - title: Markdown
+    file: Markdown.html
+  - title: Pandoc
+    file: IntroPandoc.html
+  - title: YAML
+    file: YAML.html

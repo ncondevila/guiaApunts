@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ca" xml:lang="ca" >
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />        <title>1. El llenguatge Markdown</title>
+    <style>
+        code{white-space: pre-wrap;}
+        span.smallcaps{font-variant: small-caps;}
+        span.underline{text-decoration: underline;}
+        div.column{display: inline-block; vertical-align: top; width: 50%;}
+        div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+        ul.task-list{list-style: none;}
+        pre > code.sourceCode { white-space: pre; position: relative; }
+        pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+        pre > code.sourceCode > span:empty { height: 1.2em; }
+        .sourceCode { overflow: visible; }
+        code.sourceCode > span { color: inherit; text-decoration: inherit; }
+        div.sourceCode { margin: 1em 0; }
+        pre.sourceCode { margin: 0; }
+        @media screen {
+        div.sourceCode { overflow: auto; }
+        }
+        @media print {
+        pre > code.sourceCode { white-space: pre-wrap; }
+        pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+        }
+        pre.numberSource code
+          { counter-reset: source-line 0; }
+        pre.numberSource code > span
+          { position: relative; left: -4em; counter-increment: source-line; }
+        pre.numberSource code > span > a:first-child::before
+          { content: counter(source-line);
+            position: relative; left: -1em; text-align: right; vertical-align: baseline;
+            border: none; display: inline-block;
+            -webkit-touch-callout: none; -webkit-user-select: none;
+            -khtml-user-select: none; -moz-user-select: none;
+            -ms-user-select: none; user-select: none;
+            padding: 0 4px; width: 4em;
+            color: #aaaaaa;
+          }
+        pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+        div.sourceCode
+          {   }
+        @media screen {
+        pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+        }
+        code span.al { color: #ff0000; } /* Alert */
+        code span.an { color: #008000; } /* Annotation */
+        code span.at { } /* Attribute */
+        code span.bu { } /* BuiltIn */
+        code span.cf { color: #0000ff; } /* ControlFlow */
+        code span.ch { color: #008080; } /* Char */
+        code span.cn { } /* Constant */
+        code span.co { color: #008000; } /* Comment */
+        code span.cv { color: #008000; } /* CommentVar */
+        code span.do { color: #008000; } /* Documentation */
+        code span.er { color: #ff0000; font-weight: bold; } /* Error */
+        code span.ex { } /* Extension */
+        code span.im { } /* Import */
+        code span.in { color: #008000; } /* Information */
+        code span.kw { color: #0000ff; } /* Keyword */
+        code span.op { } /* Operator */
+        code span.ot { color: #ff4000; } /* Other */
+        code span.pp { color: #ff4000; } /* Preprocessor */
+        code span.sc { color: #008080; } /* SpecialChar */
+        code span.ss { color: #008080; } /* SpecialString */
+        code span.st { color: #008080; } /* String */
+        code span.va { } /* Variable */
+        code span.vs { color: #008080; } /* VerbatimString */
+        code span.wa { color: #008000; font-weight: bold; } /* Warning */
+        .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    </style>
+        <link rel="stylesheet" href="css/style.css" />  
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+      
+</head>
+
+<body>
+    <!-- Botó per obrir el menú -->
+        <button class="openbtn" onclick="switchMenu()">&#9776;</button>     <!-- End -->
+
+         <header id="title-block-header">
+        <h1 class="title">1. El llenguatge Markdown</h1>
+          
+    </header>
+     
+    <!-- Panell lateral per al menú del docuement-->
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="switchMenu()">&times;</a>
+        <!-- Fi PAnell lateral -->
+
+
+        <nav id="TOC" role="doc-toc">
+                        <h2 id="toc-title">Continguts</h2>
+             <ul>
+<li><a href="#introduccio"><span class="toc-section-number">1</span> Introducció: L’art d’escriure davant un ordinador</a>
+<ul>
+<li><a href="#processadors-vs-editors"><span class="toc-section-number">1.1</span> Processadors vs editors</a></li>
+</ul></li>
+<li><a href="#el-llenguatge-markdown"><span class="toc-section-number">2</span> El llenguatge Markdown</a>
+<ul>
+<li><a href="#variants"><span class="toc-section-number">2.1</span> Variants</a></li>
+<li><a href="#sintaxi-de-markdown"><span class="toc-section-number">2.2</span> Sintaxi de Markdown</a></li>
+<li><a href="#referències-i-informnació-addicional"><span class="toc-section-number">2.3</span> Referències i informnació addicional</a></li>
+</ul></li>
+</ul>
+        </nav>
+    </div>
+    <!-- Tancant el panell lateral -->
+
+     <h1 data-number="1" id="introduccio"><span class="header-section-number">1</span> Introducció: L’art d’escriure davant un ordinador</h1>
+<p>Quan ens enfrontem a la tasca de crear un document o uns apunts, i una vegada superada la síndrome del <em>full en blanc</em>, solen aparéixer nous interrogants i dubtes mentre els elaborem referents a l’aspecte final del document… numeració d’epígrafs, format dels títols, taules, portada, etc. Açò fa que sovint, dediquem gran part del temps a la formatació en detriment del contingut.</p>
+<p>Per altra banda, quan treballem amb diferents processadors de text, i tot i que cada vegada són menys, poden aparéixen problemes de compatibilitat o de presentació entre els formats que aquests utilitzen. Més encara, quan intentem utilitzar plantilles preformatades amb un processador concret en un altre.</p>
+<p>Els processadors de text actuals, tipus LibreOffice o MS Office, segueixen un paradigma per a la creació de documents anomenat <strong>WYSIWYG</strong> (<em>What You See Is What You Get</em>, <em>el que veus és el que tens</em>). Aquest paradigma s’aplica tant a processadors de text com a altres tipus d’editors, com puguen ser alguns editors web, i es basa en la possibilitat de poder escriure el document veient o treballant directament sobre el resultat final. El primer processador de text d’aquest tipus va ser <em>Bravo</em>, per a l’ordinador <em>Xerox Alto</em>, a la dècada dels 70.</p>
+<p>Els processadors i editors basatas en aquest paradigma, tenen, com és evident, l’avantatge que podem anar escrivint el resultat final, ocultant la representació interna dels diferents elements. Per contra, aquest fet fa que es genere molta més informació de la necessària a l’hora de representar internament els documents, i aquests acaben ocupant molt més del que es necessitaria.</p>
+<p>Un altre paradigma, tot i que menys conegut és el <strong>WYSIWYM</strong> (<em>What You See Is What You Mean</em>, <em>el que veus és el que vols dir</em>), segons el qual, l’usuari s’encarrega d’introduir els continguts de forma estructurada, segons el seu significat, en lloc d’indicar el format de representació final. La idea és indicar si el que s’està escrivint és un títol, una secció, el nom de l’autor, etc. en lloc d’indicar el seu format. El propi processador o altres eines externes, hauran de ser el qui generen el document en el seu format final, coherent amb el text i l’estructura especificades.</p>
+<p>L’avantatge d’aquests sistemes és que es fa manifesta la separació entre contingut i presentació, de manera que només ens hem de preocupar de l’estructura i els continguts, deixant a banda els aspectes visuals per a que s’encarregue d’ells el propi sistema d’exportació.</p>
+<p><strong>Markdown</strong> es un llenguatge que segueix aquest paradigma, i ens servirà doncs per generar documents que ens permeten centrar-nos més en el contingut i no estar tan pendents de l’aspecte final.</p>
+<h2 data-number="1.1" id="processadors-vs-editors"><span class="header-section-number">1.1</span> Processadors vs editors</h2>
+<p>Per tal d’acabar d’aclarir els conceptes vistos en l’anterior apartat, anem a il·lustrar la diferència entre un processador de textos (WYSIWYG) i un editor de textos (WYSIWYM).</p>
+<p>Per això, anem a creem un arxiu <em>Document.odt</em> en LibreOffice on simplement escriurem el text <em>Document creat amb LibreOffice</em> i veurem que realment es tracta d’una carpeta comprimida amb diferents documents al seu interior, els quals definieixen l’aspecte final que presenta el contingut.</p>
+<figure>
+<img src="img/documentODT.png" alt="DocumentODT" /><figcaption aria-hidden="true">DocumentODT</figcaption>
+</figure>
+<p>L’arxiu <em>Document.odt</em> el podem obrir amb la utilitat que normalment utilitzem per descomprimir arxius i veure que realment tenim els següents documents:</p>
+<figure>
+<img src="img/arxiusODT.png" alt="ArxiusODT" /><figcaption aria-hidden="true">ArxiusODT</figcaption>
+</figure>
+<p>Com podeu deduir, el contingut del nostre arxiu estarà definit a l’arxiu <em>content.xml</em>, acompanyat d’una sèrie d’etiquetes XML. Ara podem obrir este arxiu amb un editor de textos tipus bloc de notes (Windows) o gedit/kate (Linux) per veure el seu format.</p>
+<p>Quasi al final del document tenim definit el nostre contingut en una línia com la següent:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">text:p</span><span class="ot"> text:style-name=</span><span class="st">&quot;P1&quot;</span>&gt;Document creat amb LibreOffice&lt;/<span class="kw">text:p</span>&gt;</span></code></pre></div>
+<p>La línia anterior indica que és un paràgraf de text amb l’estil P1 o estil de paràgraf per defecte.</p>
+<p>Si ara repetim el procés però creant un arxiu <em>Document.txt</em> amb un editor de textos amb el contingut <em>Document creat amb editor de textos</em> i l’obrim amb un editor, veurem que simplement tenim guardat el text que haviem escrit, sense que el programa haja insertat informació adicional o creat arxius adicionals.</p>
+<p>Com ja hem comentat, simplement guarda la informació en forma de text, sense formats. Açò fa que la compatibilitat entre sistemes siga total, a diferència dels formats de processadors de textos, on pot haver algunes incompatibilitats.</p>
+<h1 data-number="2" id="el-llenguatge-markdown"><span class="header-section-number">2</span> El llenguatge Markdown</h1>
+<p>Markdown es defineix com un <strong>llenguatge de marques lleuger</strong>, amb la finalitat d’escriure utilitzant un format de text pla, fàcil d’escriure i de llegir, i que puga convertir-se a altres formats, com HTML, epub o pdf.</p>
+<blockquote>
+<p><strong>Lenguatges de marques</strong></p>
+<p>Un llenguatge de marques o llenguatge de marcat s’entén com una forma de codificació de documents, que junt amb el text, incorporten etiquetes o marques amb informació addicional sobre l’estructura del text o la presentació. Els llenguatges de marques més coneguts són l’HTML (<em>HyperText Markup Language</em>) i l’XML (<em>Extensible Markup Language</em>).</p>
+<p>Quan parlem d’un <strong>llenguatge de marques lleuger</strong>, fem referència a llenguatges de marques que utilitzen un format de text més o menys estandarditzat, que ocupa poc espai i que és fàcil de llegir i d’escriure.</p>
+</blockquote>
+<p>El llenguatge Markdown va ser creat per John Gruber, amb la finalitat d’aconseguir la màxima legibilitat i facilitat de publicació, i es va inspirar en moltes convencions existents per al marcat de misstges de correu electrònic utilitzant text pla. Segon John Gruber <em>Un document amb format Markdown hauria de ser publicable tal qual, com a text pla, sense que semble que s’ha marcat amb etiquetes o instruccions de format.</em></p>
+<p>Actualment, Markdown s’utilitza en molts àmbits, especialment en la generació de documentació i contingut web, en llocs com Github, o sistemes de gestió de continguts com Jekyll, Hugo, Gitbook, i fins i tot la plataforma Moodle. Per a la generació de documentació en pdf, existeixen eines, com <em>pandoc</em>, que veurem més endavant, i que fan ús del potent sistema de composició de textos <em>LaTeX</em> per a la seua formatació.</p>
+<p>Amb Markdown podem formatar el text amb lletres cursives, negretes, capçaleres o enllaços utilitzant únicament text pla, el que fa que l’escriptura siga més simple i eficient, ja que ens evita haver d’estar pensant en el format i ens permet centrar-nos només en el contingut.</p>
+<h2 data-number="2.1" id="variants"><span class="header-section-number">2.1</span> Variants</h2>
+<p>La versió original de Gruber podríem dir que és el format estàndard. Aporta format de text (negretes i cursives), així com marques de continguts (títols, imatges, enllaços, cites, línies horitzontals o blocs de codi), llistes ordenades i desordenades, etc.</p>
+<p>A banda d’aquesta versió original, han anat apareixent diverses variants, entre les que podem destacar:</p>
+<ul>
+<li><strong>CommonMark</strong>: Variant centrada en la conversió a HTML.</li>
+<li><strong>Github Flavored Markdown</strong>: Markdown utilitzat a la plataforma d’allotjament de projectes Github, que afig sintaxi relacionada amb el contingut relatiu al control de versions, revisions, etc.</li>
+<li><strong>Multimarkdown</strong>, Variant que afig altres funcionalitats i continguts,</li>
+<li><strong>Pandoc Markdown</strong>: Variant basada en l’estàndard, però amb extensions que ens permeten afegir marques d’altres variants, i que incorpora diverses millores. Aquesta serà la versió que utilitzem quan utilitzem <em>Pandoc</em> per a la generació de documents.</li>
+</ul>
+<blockquote>
+<p><strong>“Fitxers de text”</strong></p>
+<p>Abans de continuar, i tot i que a molts de vosaltres vos semblarà evident, anem a puntualitzar el concepte de <em>fitxer de text</em>.</p>
+<p>Un document generat en qualsevol processador de text, tot i que el seu contingut aparent és text, és un tipus de fitxer més complex, on internament s’emmagatzema informació sobre la formatació, metainformació, etc. i generalment es comprimeix en un únic document, amb extensió com puga ser <em>odt</em> o <em>docx</em>.</p>
+<p>Un <em>fitxer de text simple</em>, també conegut com text sense format o text pla (<em>plain text</em>), conté únicament text format per caràcters legibles per les persones, sense cap informació de representació interna. Únicament contenen els <em>bytes</em> que representen caràcters ordinaris com lletres, números, signes de puntuació, i caràcters de control com tabulacions, salts de línia i retorns de carro.</p>
+</blockquote>
+<blockquote>
+<p><strong>Edició de documents amb Markdown</strong></p>
+<p>A partir d’aquest punt, anem a abordar la sintaxi del llenguatxe Markdown, on s’aniran mostrant exemples de la notació utilitzada i la seua interpretació.</p>
+<p>Seria convenient que anàreu provant els diferents exemples que es mostren, per tal que no es convertisca en una lectura tediosa i poc profitosa.</p>
+<p>En aquest punt, és doncs interessant fer una pausa en aquest document i donar una ullada al document sobre <em>Edició de fitxers amb Markdown</em>, on es presenten un parell d’eines per tal d’escriure amb aquest llenguatge, de manera que pugueu anar provant d’aci en avant els exemples.</p>
+</blockquote>
+<h2 data-number="2.2" id="sintaxi-de-markdown"><span class="header-section-number">2.2</span> Sintaxi de Markdown</h2>
+<p>Com hem dit, Markdown es basa en fitxers de tipus text, que no contenen cap informació <em>interna</em> sobre el format. Aquesta informació, s’especificarà de forma explícita mitjançant etiquetes, que seran visibles en tot moment, i que facilitaran, per una banda la seua interpretació a l’hora d’exportar-los a altre format, però també la seua lectura per part de les persones.</p>
+<p>En aquet apartat, el central del tema, anem a veure quins són els diferents elements que podem utilitzar en un text en format Markdown, així com les principals marques de format.</p>
+<h3 data-number="2.2.1" id="paràgrafs"><span class="header-section-number">2.2.1</span> Paràgrafs</h3>
+<p>Un paràgraf, tal i com l’entén Markdown, és un bloc de text definit entre <strong>dos salts de línia</strong> (tecla <code>Intro/Enter/Entrar</code>).</p>
+<p>Si utilitzem només un salt de línia, es sobreentén que és el mateix paràgraf, i a l’hora de generar el document, el veurem com a tal.</p>
+<p>Si el que desitgem, per altra banda és afegir només un salt de línia a la meitat d’un paràgraf, afegirem almenys dos espais al final de la línia, i un sí que utilitzrem un (només un) salt de línia.</p>
+<p>Veiem-ho amb algun exemple:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Aquest és el primer paràgraf, com veieu, necessita dos salts de línia, o el que sería el mateix, una línia en blanc després del paràgraf.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>Aquest és un altre paràgrar,   </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>en el que hem forçat salts de línia,    </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>i encara que no es veja, aquestes línies  </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>acaben amb dos o més espais en blanc.</span></code></pre></div>
+<h3 data-number="2.2.2" id="capçaleres"><span class="header-section-number">2.2.2</span> Capçaleres</h3>
+<p>Hi ha diverses formes de marcar capçaleres:</p>
+<ul>
+<li>Utilitzant al menys un símbol <code>=</code>o <code>-</code> després del text per indicar capçaleres de primer i segon nivell:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Açò sería una capçalera de primer nivell</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">========================================</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>Açò sería una capçalera de segon nivell</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>---------------------------------------</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>Recordeu que només cal un = o un -, encara que se&#39;n poden utilitzar més, com és el cas d&#39;aquest exemple, on s&#39;han utilitzat tants símbols com longitud té el títol.</span></code></pre></div>
+<ul>
+<li>Utilitzant l’<strong>Estil ATX</strong>, al qual, utilitzem el símbol <code>#</code> abans del text per indicar el nivell de la capçalera. S’admeten fins a sis nivells de profunditat (<code>######</code>), el que vindria a ser del <code>h1</code> fins al <code>h6</code> d’HTML.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Capçalera de primer nivell</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">## Capçalera de segon nivell nivell</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">### Capçalera de tercer nivell nivell</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Capçalera de nivell 6</span></span></code></pre></div>
+<blockquote>
+<p><strong>A tenir amb compte</strong></p>
+<p>La versió estàndard de Markdown no requereix d’una línia en blanc abans d’una capçalera, però d’altres versions, com per exemple la de <em>Pandoc</em> sí que la requereix. No obstant això, encara que l’estàndard no ho utilitze, convé afegir-la ja que facilita així la lectura i localització d’aquestes.</p>
+<p>Algunes implementacions, tampoc requereixen d’un espai entre el símbol <code>#</code> inicial i el primer caràcter del títol. <em>Pandoc</em> sí que demana aquest espai, de manera que podem posar un <code>#hastah</code> al principi d’un paràgraf sense que l’interprete com una capçalera.</p>
+</blockquote>
+<h3 data-number="2.2.3" id="atributs-a-la-capçalera"><span class="header-section-number">2.2.3</span> Atributs a la capçalera</h3>
+<p>Quan es genera un document, ja siga PDF, HTML o altre format a partir d’un document en Markdown, a les capçaleres se’ls assigna un identificador de manera automàtica, per a que es puga fer referència a elles des d’altres parts del document. Aquest identificador s’obté a partir del text de la capçalera, pel que si aquesta és llarga, l’identificador també ho serà. La versió de Pandoc, ens permet afegir certs atributs a les capçaleres, entre les que es troba l’identificador.</p>
+<p>Veiem-ho amb un exemple. Donada, per exemple la primera capçalera d’aquest document:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introducció: L&#39;art d&#39;escriure davant un ordinador</span></span></code></pre></div>
+<p>L’identificador que es genera és: <code>id="introducció-lart-descriure-davant-un-ordinador"</code>.</p>
+<p>Aquesta capçalera, la podriem haver escrit també de la següent forma:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introducció: L&#39;art d&#39;escriure davant un ordinador { #introduccio }</span></span></code></pre></div>
+<p>Sent l’identificador de la capçalera només <code>#introduccio</code>, de manera que podem fer referència a l’apartat mitjançant aquest.</p>
+<p>Disposeu de més informació sobre les capçaaleres a la <a href="https://pandoc.org/MANUAL.html#headings">secció de Markdown manual del manual de Pandoc</a>.</p>
+<h3 data-number="2.2.4" id="formatació-de-text"><span class="header-section-number">2.2.4</span> Formatació de text</h3>
+<p>Markdown ens permet fer ús del símbol de l’asterisc com a marca de format per tal d’indicar textos tant en cursiva, com en negreta o ambdós. Per a això farem ús d’ún, dos o tres asteriscs al principi i al final del text que volem remarcar. A més, cal tindre en compte que no hem d’afegir cap espai entre els asteriscs del principi i la primera paraula i els asteriscs del final i la última.</p>
+<p>Veiem-ho amb exemples:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Amb un asterisc marquem un *text en cursiva*</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Amb dos asteriscs marquem un **text en negreta** </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Amb tres asteriscs marqiem un ***text en cursiva i negreta***</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>En canvi, si afegim algun espai entre mig, ** no s&#39;interpretarà correctament**</span></code></pre></div>
+<p>Resultat:</p>
+<p>Amb un asterisc marquem un <em>text en cursiva</em><br />
+Amb dos asteriscs marquem un <strong>text en negreta</strong><br />
+Amb tres asteriscs marqiem un <strong><em>text en cursiva i negreta</em></strong></p>
+<p>En canvi, si afegim algun espai entre mig, ** no s’interpretarà correctament**</p>
+<h3 data-number="2.2.5" id="línies-horitzontals"><span class="header-section-number">2.2.5</span> Línies horitzontals</h3>
+<p>Una línia horitzontal es defineix mitjançant tres o més símbols <code>*</code>, <code>-</code> o <code>_</code>, separats o no per espais:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>- - -</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>* * *</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>_ _ _</span></code></pre></div>
+<p>Resultat:</p>
+<hr />
+<hr />
+<hr />
+<h3 data-number="2.2.6" id="llistes"><span class="header-section-number">2.2.6</span> Llistes</h3>
+<p>Markdown permet fer ús tant de llistes ordenades com llistes no ordenades.</p>
+<h4 data-number="2.2.6.1" id="llistes-no-ordenades"><span class="header-section-number">2.2.6.1</span> Llistes no ordenades</h4>
+<p>Les llistes no ordenades es marquen fent ús dels símbols <code>*</code>, <code>+</code> o <code>-</code> al principi de cada element, i incloent cada ítem en una línia diferent (i no fan falta dos salts de línia).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element 1</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element 2</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>...</span></code></pre></div>
+<p>Cada element de la llista pot contindre diversos paràgrafs, i altres continguts a nivell de bloc. Quan volem incloure diversos paràgrafs a un ítem de la llista, el segon paràgraf i posteriora hauran d’anar <strong>precedits per una línia en blanc, i sagnats per aliniar-se amb el contingut que no siga l’espai després del marcador de la llista</strong>.</p>
+<p>Per exemple:</p>
+<pre><code>* Primer element de la llista
+* Segon element de la llista
+
+  Altre paràgraf corresponent al segon element de la llista.
+  No cal un espai en blanc entre l&#39;últim paràgraf i el següent element,
+  però el podem afegir per facilitar la lectura de la llista.
+
+* Tercer element de la llista.</code></pre>
+<p>Una llista pot contindre dins altres llistes. En aquest cas, podem o no incloure una línia en blanc al davant. Per utilitzar una llista dins d’una altra només haurem de <em>sagnar</em> la llista que està dins l’altra per aliniar-la amb el primer caràcter de text de l’element que la conté. Podem tindre tantes llistes dins d’altres com volguem.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element 1</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>subelement 1.1</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>subelement 1.1.1</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>subelement 1.1.2</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>subelement 1.2</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>subelement 1.3</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element 2</span></code></pre></div>
+<p>En aquests casos, com que podem utilitzar diversos símbols per indicar llistes, se sol utilitzar un element per cada nivell de la llista, amb la finalitat de facilitar la lectura del text pla:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element 1</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>subelement 1.1</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>subelement 1.1.1</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>subelement 1.1.2</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>subelement 1.2</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ss">  + </span>subelement 1.3</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Element 2</span></code></pre></div>
+<p>Resultat:</p>
+<ul>
+<li>Element 1
+<ul>
+<li>subelement 1.1
+<ul>
+<li>subelement 1.1.1</li>
+<li>subelement 1.1.2</li>
+</ul></li>
+<li>subelement 1.2</li>
+<li>subelement 1.3</li>
+</ul></li>
+<li>Element 2</li>
+</ul>
+<h4 data-number="2.2.6.2" id="llistes-ordenades"><span class="header-section-number">2.2.6.2</span> Llistes ordenades</h4>
+<p>El funcionament de les llistes ordenades és el mateix que les no ordenades, llevat que cada element de la llista porta un número en lloc d’una <em>vinyeta</em>.</p>
+<p>En la versió estàndard de Markdown els elements que indiquen l’ordre han de ser <strong>números decimals seguits d’un punt i un espai</strong>. En l’estàndard, <strong>aquests números s’ignoren</strong>, pel que la llista:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Element 1</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Element 2</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Element 3</span></code></pre></div>
+<p>Serà la mateixa que:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Element 1</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Element 2</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Element 3</span></code></pre></div>
+<p>El Markdown de Pandoc, afig un parell d’extensions a aquesta forma d’utilitzar les llistes ordenades.</p>
+<p>En primer lloc, a més de números, permet marcar els elements d’una llista ordenada amb lletres majúscules, minúscules o números romans. Per a això utilitzarem com a marcadors de llista la lletra entre parèntesi o bé només amb el parèntesi dret, seguit d’almenys un espai. També podem utilitzar el punt, però en aquest cas, afegint dos espais com a mínim rere el punt en lloc d’un.</p>
+<p>Per exemple:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>(A) Element 1</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>(B) Element 2</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>A) Element 1</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>B) Element 2</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>I.  Element 1, amb dos espais mínims després del punt</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>II.  Element 2, amb dos espais mínims després del punt</span></code></pre></div>
+<p>Per altra banda, amb Pandoc també podemutilitzar el símbol <code>#</code> com a marcador de llista ordenada, de manera que el sistema pose automàticament la numeració. Així el codi:</p>
+<pre class="markdonw"><code>#. element 1
+#. element 2</code></pre>
+<p>Generaría la llista:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>element 1</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>element 2</span></code></pre></div>
+<p>Una altra extensió del Markdown de Pandoc respecte al Markdown original és que conserva la numeració a partir del número inicial. Per exemple, si indiquem per error:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Element 5</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Element 6</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Element 7</span></code></pre></div>
+<p>L’eixida serà la següent, on es corregeix aquest error en la numeració.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Element 5</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Element 6</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Element 7</span></code></pre></div>
+<h4 data-number="2.2.6.3" id="llistes-de-tasques"><span class="header-section-number">2.2.6.3</span> Llistes de tasques</h4>
+<p>Una extensió més que afig la versió de Pandoc a l’estàndard és la possibilitat d’utilitzar llistes de tasques, introduïdes al Markdown de Github.</p>
+<p>Per utilitzar aquest tipus de llistes utilitzem el guió com a marcador de llista seguit d’un espai i les seqüències de caràcters <code>[ ]</code>i <code>[x]</code> per indicar un element de llista no marcat i marcat respectivament. Per exemple:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Element de llista com a tasca sense marcar</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Element de llista com a tasca marcada.</span></code></pre></div>
+<p>Obtindría com a resultat:</p>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" />
+Element de llista com a tasca sense marcar</li>
+<li><input type="checkbox" disabled="" checked="" />
+Element de llista com a tasca marcada.</li>
+</ul>
+<h3 data-number="2.2.7" id="taules"><span class="header-section-number">2.2.7</span> Taules</h3>
+<p>Les taules ens serveixen per tal de presentar informació de manera organitzada.</p>
+<p>La versió original de Markdown de John Gruber no inclou la definició de taules en la sintaxi de Markdown. Com que inicialment es va concebir com una eina per fer la conversió a HTML, per afegir taules s’utilitzava directament aquest llenguatge.</p>
+<p>No obstant això, les diferents variants de Markdown han anat afegint notacions i extensions al Markdown original per suportar taules.</p>
+<p>La sintaxi per crear taules del Markdown de Github és una de les més esteses, i fa ús de barres verticals (<code>|</code>) i guions (<code>-</code>) per crear les taules. Els guions s’utilitzen per creat l’encapçalament de cada columna, i les barres verticals serveixen de separador de cada columna. A més, per a que la taula es represente correctament, cal una línia en blanc abans de la taula.</p>
+<p>Les taules, en aquest format han de tindre necessàriament una capçalera i un cos, i seguiran la següent sintaxi:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>| Capçalera 1 | Capçalera 2 |</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>|-------------|-------------|</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>| Valor 1     | Valor 2     |</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>| Valor 3     | Valor 4     |</span></code></pre></div>
+<p>Que té com a resultat:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Capçalera 1</th>
+<th>Capçalera 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Valor 1</td>
+<td>Valor 2</td>
+</tr>
+<tr class="even">
+<td>Valor 3</td>
+<td>Valor 4</td>
+</tr>
+</tbody>
+</table>
+<p>Algunes consideracions:</p>
+<ul>
+<li>Podem afegir tants camps (columnes) com volguem.</li>
+<li>La línia que separa la capçalera del cos <code>|---|---|</code> és obligatòria, però no és necessari que tinga tants caràcters com tinguen les capçaleres, pel que no cal que la taula estiga completament aliniada.</li>
+<li>Les barres verticals (<code>|</code>) del principi i del final són opcionals.</li>
+</ul>
+<h4 data-number="2.2.7.1" id="formatat-el-contingut-duna-taula"><span class="header-section-number">2.2.7.1</span> Formatat el contingut d’una taula</h4>
+<p>Dins una taula podem utilitzar també certes marques de format, com negretes, cursives, enllaços, imatges…</p>
+<p>A més, podem aliniar el text a l’esquerra, a la dreta o al centre de la columna, afegint la marca dos punts <code>:</code>, al costat esquerra, dret, o als dos, dels guions de l’encapçalament.</p>
+<p>Veiem-ho amb un exemple. La següent definició de taula:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>| Text a l&#39;esquerra | Text centrat | Text a la dreta |</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>|        :---       |     :---:    |      ---:       |</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>| xxx               | xxx          | xxx             |</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>| xxxxx             | xxxxx        | xxxxx           |</span></code></pre></div>
+<p>Té el següent resultat:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Text a l’esquerra</th>
+<th style="text-align: center;">Text centrat</th>
+<th style="text-align: right;">Text a la dreta</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">xxx</td>
+<td style="text-align: center;">xxx</td>
+<td style="text-align: right;">xxx</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">xxxxx</td>
+<td style="text-align: center;">xxxxx</td>
+<td style="text-align: right;">xxxxx</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Si el que volem és afegit dins una taula una barra vertical com a contingut, hem de posar abans el símbol <code>\</code>, per indicar que el caràcter següent no s’ha d’interpretar com a marca de format Markdown. Aquesta barra invertida s’anomena caràcter d’<em>escapament</em>, i a la combinació d’ella amb qualsevol marca que volguem que no s’interprete es coneix com <em>seqüència d’escapament</em>.</p>
+</blockquote>
+<h4 data-number="2.2.7.2" id="peculiaritats-de-les-taules-en-pandoc-markdown"><span class="header-section-number">2.2.7.2</span> Peculiaritats de les taules en Pandoc Markdown</h4>
+<p>Pandoc, a més de l’anterior, inclou tres formes més de crear taules: taules simples, taules multilínia i taules de quadrícula. Per a aquests tipus de taules, convé treballar amb un tipus de lletra a l’editor d’amplada fixa, ja que requereixen que les columnes estiguen aliniades, i amb tipus de lletra de longitud variable ens resultarà complicat fer aquest aliniament.</p>
+<ul>
+<li><p><strong>Taules simples</strong>: Utilitzen només el guió (<code>-</code>) per indicar la separació de la capçalera de la taula. S’utilitzarà una línia discontínua formada per guions, on cada separació d’espais determinarà una columna. Aquestes taules estan subjectes a les següents regles:</p></li>
+<li><p>Les files de capçalera i de contingut han de cabre en una mateixa línia, i els aliniaments de cada columna es determinen per la posició del text de la capçalera en relació amb la línia discontínua formada pels guions.</p></li>
+<li><p>Per aliniar el text de la capçalera i el contingut a l’esquerra, s’alinia el començament del text de la capçalera amb l’inici de la marca de cada columna amb la línia discontínua.</p></li>
+<li><p>Per aliniar el text de la capçalera i el contingut a la dreta, s’alinia el final del text de la capçalera amb el final de la marca de cada columna amb la línia discontínua.</p></li>
+<li><p>Si la capçalera no s’alinia ni al principi ni al final amb la marca de la columna, el text serà centrat.</p></li>
+<li><p>Si s’alinia el text de la capçalera de la columna als dos costats (la línia té la mateixa longitud que la capçalera), s’utilitza l’aliniació per omissió (generalment a l’esquerra).</p></li>
+<li><p>La taula ha d’acabar amb una línia en blanc (dos salts de línia), o bé una línia de guions seguida d’una línia en blanc.</p></li>
+<li><p>Si no volem utilitzar capçalera, podem definir la taula entre les línies de guions. En aquest cas, els aliniaments venen determinats per la primera fila de dades.</p></li>
+</ul>
+<p>Veiem algunas exemples:</p>
+<p><strong><em>Exemple 1. Aliniació</em></strong>. Fixeu-vos que l’aliniació la determina la capçalera, no el text de cada columna.</p>
+<p>La taula:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>  Dreta     Esquerra       Centrat    Per defecte</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>-------     ----------   ----------   -----------</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>12          12           12           12</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>123         123          123          123</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>1           1            1            1</span></code></pre></div>
+<p>Es transforma en:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">Dreta</th>
+<th style="text-align: left;">Esquerra</th>
+<th style="text-align: center;">Centrat</th>
+<th>Per defecte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: center;">12</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: center;">123</td>
+<td>123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong><em>Exemple 2. Taula sense capçalera</em></strong>. Fixeu-vos que en aquest cas, l’aliniació vé defnida per la primera fila de dades.</p>
+<p>La definició:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>------- ------ ---------- --</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="in">     12 12        12      12</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>123     123    123        123</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>4567    4567   4567       4567</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>------- ------ ---------- --</span></code></pre></div>
+<p>Genera la taula:</p>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: center;">12</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: center;">123</td>
+<td>123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4567</td>
+<td style="text-align: left;">4567</td>
+<td style="text-align: center;">4567</td>
+<td>4567</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Taules multilínia</strong>: Es tracta de taules que permeten separar el contingut d’una fila en vàries línies, per tal de fer el contingut més legible en el fitxer en Markdown, però que es transformen en una sola línia a l’hora de presentar-les.</li>
+</ul>
+<p>Veiem un exemple. La següent definició:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">---------------------------------------------------</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">Aliniació     Capçalera         Aliniació Aliniació</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">a l&#39;esquerra  centrada         a la dreta per defecte</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span>--------- ------------ --------------- ---------</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  Fila1        Fila 1      Fila 1          Fila 1</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  Columna1     Columna2    Columna 3       Columna 3</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  Fila2        Fila 2      Fila 2          Fila 2</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  Columna1     Columna2    Columna 3       Columna 3</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>----------------------------------------------------</span></code></pre></div>
+<p>Generarà la següent taula:</p>
+<table style="width:72%;">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 22%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Aliniació a l’esquerra</th>
+<th style="text-align: center;">Capçalera centrada</th>
+<th style="text-align: right;">Aliniació a la dreta</th>
+<th>Aliniació per defecte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Fila1 Columna1</td>
+<td style="text-align: center;">Fila 1 Columna2</td>
+<td style="text-align: right;">Fila 1 Columna 3</td>
+<td>Fila 1 Columna 3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fila2 Columna1</td>
+<td style="text-align: center;">Fila 2 Columna2</td>
+<td style="text-align: right;">Fila 2 Columna 3</td>
+<td>Fila 2 Columna 3</td>
+</tr>
+</tbody>
+</table>
+<p>El funcionament és semblant a les taules simples, però amb algunes peculiaritats:</p>
+<ul>
+<li>Les taules comencen amb una fila de guions abans del text de la capçalera. Aquesta línia es pot ometre si no es va a utilitzar capçalera.</li>
+<li>Les taules acaben amb una fila de guions i una línia en blanc</li>
+<li>Les diferents files se separen per línies en blanc.</li>
+</ul>
+<p>Quan es genera la taula, es tindrà en compte l’amplada espeficicada de les columnes, pel que si l’eixida queda estreta, podem allargar la línia de guions que defineix l’amplada de la columna.</p>
+<p>Cal recordar també que a l’igual que en les tuales simples, es pot ometre la capçalera.</p>
+<ul>
+<li><strong>Taules en forma de quadrícula o graella</strong>: Aquestes taules ens permeten definir de forma més <em>gràfica</em> la taula.</li>
+</ul>
+<p>Els aspectes més destacats d’aquest tipus de taules són:</p>
+<ul>
+<li>Utilitzen el símbol <code>|</code> com a separador de columnes,</li>
+<li>Utilitzen el guió <code>-</code> per separar files, llevat de la de capçalera, que utilitza el signe d’igual (<code>=</code>).</li>
+<li>Utilitza el símbol <code>+</code> com a separador de columnes en les línies amb guions i iguals.</li>
+<li>Dins de cada <em>cel·la</em> podem especificar qualsevol tipus de contingut.</li>
+</ul>
+<p>Ho veurem més clar amb un exemple. Si definim la següent taula:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>+---------------+----------------+-------------+</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>| Capçalera 1   | Capçalera 2    | Capçalera 3 |</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>+===============+================+=============+</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>| Contingut 1   |  - element 1   |             | </span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>|               |  - element 2   |             |</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>|               |  - element 3   |             |</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>+---------------+----------------+-------------+</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>| Contingut 2   |                | #. item 1   |</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>|               |                | #. item 2   | </span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>+---------------+----------------+-------------+</span></code></pre></div>
+<p>Obtindrem:</p>
+<table style="width:65%;">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 23%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capçalera 1</th>
+<th>Capçalera 2</th>
+<th>Capçalera 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Contingut 1</td>
+<td><ul>
+<li>element 1</li>
+<li>element 2</li>
+<li>element 3</li>
+</ul></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Contingut 2</td>
+<td></td>
+<td><ol>
+<li>item 1</li>
+<li>item 2</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Títols per a les taules</strong>: Pandoc permet també afegir un títol a una taula. Un títol no serà més que un paràgraf que comence amb la cadena <code>Table:</code>, i simplificant, fent ús dels dos punts <code>:</code>, a continuació de la taula.</p>
+<p>Veiem-ho amb un exemple:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>| Capçalera 1 | Capçalera 2 | </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>|-------------|-------------|</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>| Item 1      | Item 2      |</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>Table: Aquest és el títol de la taula</span></code></pre></div>
+<p>Que generarà:</p>
+<table>
+<caption>Aquest és el títol de la taula</caption>
+<thead>
+<tr class="header">
+<th>Capçalera 1</th>
+<th>Capçalera 2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Item 1</td>
+<td>Item 2</td>
+</tr>
+</tbody>
+</table>
+<h3 data-number="2.2.8" id="fragments-de-codi"><span class="header-section-number">2.2.8</span> Fragments de codi</h3>
+<p>Markdown té un ampli ús en la documentació tècnica de projectes informàtics, on és habitual incloure fragments del codi font dels programes. Per tal de ressaltar aquests tipus de fragments, Markdown utilitza una sintaxi especial, fent ús dels caràcters de l’accent obert: `.</p>
+<p>Quan es tracta de fragments de codi que han d’anar en la mateixa línia que el text, per exemple si volem indicar una etiqueta HTML, ho fem, `d’aquesta manera`, fent ús d’un únic caràcter d’accent, mentre que si el que volem és escriure un bloc de codi, utilitzaríem tres símbols d’accent obert ```. A més, rere els primers símbols, podem especificar de quin llenguatge es tracta. Per exemple, per indicar el codi HTML d’una pàgina web, faríem:</p>
+<pre><code>```html
+  &lt;html&gt;
+      &lt;body&gt;
+        &lt;h1&gt;Títol de la pàgina web&lt;/h1&gt;
+        &lt;p&gt;Paràgraf&lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+```</code></pre>
+<p>Que ens generaría:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>   <span class="kw">&lt;html&gt;</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>       <span class="kw">&lt;body&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;h1&gt;</span>Títol de la pàgina web<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>         <span class="kw">&lt;p&gt;</span>Paràgraf<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>       <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>     <span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<p>Cal remarcar que el nom del llenguatge rere les cometes fa que al mostrar el resultat, es tinga en compte el llenguatge de programació per tal de ressaltar-ne la sintaxi pròpia del llenguatge.</p>
+<h3 data-number="2.2.9" id="cites"><span class="header-section-number">2.2.9</span> Cites</h3>
+<p>En Markdown un bloc de text en forma de cita consisteix en un o més paràgrafs o altres elements de bloc (com per exemple llistes o capçaleres), on cada línia es troba precedira del caràcter <code>&gt;</code> i opcionalment un espai.</p>
+<p>Veiem alguns exemples:</p>
+<p><strong>Exemple 1</strong>:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; *Un document amb format Markdown hauria de ser publicable tal qual, com a text pla, sense que semble que s&#39;ha marcat amb etiquetes o instruccions de format.*</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; John Gruber</span></span></code></pre></div>
+<p>Genera el següent:</p>
+<blockquote>
+<p><em>Un document amb format Markdown hauria de ser publicable tal qual, com a text pla, sense que semble que s’ha marcat amb etiquetes o instruccions de format.</em></p>
+<p>John Gruber</p>
+</blockquote>
+<p><strong>Exemple 2</strong></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; # Títol de la cita</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Una cita també por contindre altres elements de bloc, com ara:</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - llistes</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - capçaleres</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; - imatges</span></span></code></pre></div>
+<p>Genera:</p>
+<blockquote>
+<h2 id="títol-de-la-cita">Títol de la cita</h2>
+<p>Una cita també por contindre altres elements de bloc, com ara:</p>
+<ul>
+<li>llistes</li>
+<li>capçaleres</li>
+<li>imatges</li>
+</ul>
+</blockquote>
+<p>A més, podem afegir cites dins d’altres. Amb:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Paràgraf de la cita.</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; &gt; Cita dins la cita</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span></code></pre></div>
+<p>Generem el següent:</p>
+<blockquote>
+<p>Paràgraf de la cita.</p>
+<blockquote>
+<p>Cita dins la cita</p>
+</blockquote>
+</blockquote>
+<p>Per altra banda, podem especificar les cites de forma <em>mandrosa</em>, afeging només el caràcter <code>&gt;</code> en la primera línia de cada bloc:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Aquesta és una cita, dins un</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="at">paràgragraf de dos línies.</span></span></code></pre></div>
+<p>Tot i ser possible, aquesta opció no és massa recomanada perquè lleva legibilitat al text en cru.</p>
+<h3 data-number="2.2.10" id="enllaços"><span class="header-section-number">2.2.10</span> Enllaços</h3>
+<p>Markdown ens permet generar enllaços tant a adreces d’Internet, com fer referència a fitxers locals, mitjançant la seua ruta relativa o fins i tot dins el propi doument.</p>
+<p>El format general per afegir un enllaç és el següent:</p>
+<pre><code>[Text de l&#39;enllaç](URL_o_adreça_relativa)</code></pre>
+<p>Per exemple, per afegir un enllaç a un lloc web, escriurem:</p>
+<pre><code>Aci afegim un [enllaç a la web del cefire](http://cefire.edu.gva.es/)</code></pre>
+<p>Que genera:</p>
+<p>Aci afegim un <a href="http://cefire.edu.gva.es/">enllaç a la web del cefire</a></p>
+<p>Per tal d’afegir un enllaç a una seccíó del nostre document, farem ús de l’identificador que s’assigna automàticament, o bé que li hem assignat nosaltres. Per exemple, si per a l’apartat introductori vam afegir un identificador de la següent forma:</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introducció: L&#39;art d&#39;escriure davant un ordinador {#introduccio}</span></span></code></pre></div>
+<p>Podem fer referència a ell de la manera següent:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>Feu click <span class="co">[</span><span class="ot">al següent enllaç</span><span class="co">](#introduccio)</span> per tornar a la secció d&#39;Introducció.</span></code></pre></div>
+<p>Que generaría:</p>
+<p>Feu click <a href="#introduccio">al següent enllaç</a> per tornar a la secció d’Introducció.</p>
+<h3 data-number="2.2.11" id="imatges"><span class="header-section-number">2.2.11</span> Imatges</h3>
+<p>La sintaxi per afegir una imatge és semblant a la de l’enllaç, predecida d’una exclamació <code>!</code>:</p>
+<pre><code>![Text alternatiu o peu de la imatge](Ubicació de la imatge)</code></pre>
+<p>A l’igual que els enllaços, la ubicació pot ser una adreça d’Internet o bé la ruta a un fitxer local al nostre ordinador:</p>
+<pre><code>![Logotip de Markdown a la Wikipèdia](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/1920px-Markdown-mark.svg.png)
+
+![Logotip de Markdown a en una ruta relativa](imatges/logoMarkdown.png)</code></pre>
+<p>En aquest segon cas, busca la imatge <em>logoMarkdown.png</em> en una carpeta <em>imatges</em> ubicada a la mateixa carpeta on es troba el nostre arxiu de text Markdown.</p>
+<p>Cal tindre en compte que quan s’exporte el fitxer a HTML, aquestes referències seguiran existint al codi HTML, pel que caldrà incloure-les en qualsevol distribució del document HTML que fem. Per altra banda, quan fem una exportació a PDF, la imatge ja s’inclourà dins el propi document.</p>
+<h4 data-number="2.2.11.1" id="afegint-tamany-a-les-imatges"><span class="header-section-number">2.2.11.1</span> Afegint tamany a les imatges</h4>
+<p>La versió de Pandoc de Markdown a més permet afegir certs atributs a les imatges. Entre aquests destaquen especialment <code>width</code> i <code>height</code>, que permeten especificar la grandària de la imatge.</p>
+<p>Si no s’indica res, el tamany s’entén que s’especifica en píxels, però podem utilitzar altres unitats com <em>px, cm, mm, in, inch i %</em>, sense incloure espais entre el número i les unitat.</p>
+<p>Veiem alguns exemples:</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Imatge 1 - 2cm](imatges/logoMarkdown.png)</span>{ width=2cm }</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="al">![Imatge 2 - 50mm](imatges/logoMarkdown.png)</span>{ width=50mm }</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="al">![Imatge 3 - 3inch](imatges/logoMarkdown.png)</span>{ width=3inch }</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="al">![Imatge 4 - 50%](imatges/logoMarkdown.png)</span>{ width=50% }</span></code></pre></div>
+<p>Que generen el següent:</p>
+<figure>
+<img src="imatges/logoMarkdown.png" style="width:2cm" alt="Imatge 1 - 2cm" /><figcaption aria-hidden="true">Imatge 1 - 2cm</figcaption>
+</figure>
+<figure>
+<img src="imatges/logoMarkdown.png" style="width:50mm" alt="Imatge 2 - 50mm" /><figcaption aria-hidden="true">Imatge 2 - 50mm</figcaption>
+</figure>
+<figure>
+<img src="imatges/logoMarkdown.png" style="width:3in" alt="Imatge 3 - 3inch" /><figcaption aria-hidden="true">Imatge 3 - 3inch</figcaption>
+</figure>
+<figure>
+<img src="imatges/logoMarkdown.png" style="width:50.0%" alt="Imatge 4 - 50%" /><figcaption aria-hidden="true">Imatge 4 - 50%</figcaption>
+</figure>
+<h3 data-number="2.2.12" id="fòrmules-matemàtiques"><span class="header-section-number">2.2.12</span> Fòrmules matemàtiques</h3>
+<p>Qualsevol text que introduim entre els caràcters del dòlar (<code>$</code>) es tractarà com a una expressió matemàtica. Tot i que alguns sistemes s’accepta posar un espai entre els símbols del dòlar i l’expressió matemàtica, per fer-ho compatible amb el Markdown de Pandoc, no huarem de posar cap espai en blanc.</p>
+<p>Per exemple:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>*Fòrmula d&#39;Euler* dins en una línia d&#39;un paràgraf: $e^{i\pi} + 1 = 0$</span></code></pre></div>
+<p>Genera:</p>
+<p><em>Fòrmula d’Euler</em> dins en una línia d’un paràgraf: <span class="math inline"><em>e</em><sup><em>i</em><em>π</em></sup> + 1 = 0</span></p>
+<p>Si volem que la fòrmula ocupe tot un bloc en lloc d’afegir-la dins una línea, farem ús de dos dòlars en lloc d’un (<code>$$</code>):</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>$$e^{i\pi} + 1 = 0$$</span></code></pre></div>
+<p>Que generarà el bloc:</p>
+<p><span class="math display"><em>e</em><sup><em>i</em><em>π</em></sup> + 1 = 0</span></p>
+<p>Quan treballem amb fòrmules matemàtiques, podem utilitzar els següents elements:</p>
+<ul>
+<li><strong>Lletres de l’alfabet grec</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Simbol</th>
+<th style="text-align: center;">Representació</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>$\alpha$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>α</em></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$A$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>A</em></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\beta$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>β</em></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$B$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>B</em></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\gamma$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>γ</em></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\Gamma$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>Γ</em></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\pi$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>π</em></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\Pi$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>Π</em></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\phi$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>ϕ</em></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\Phi$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>Φ</em></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\varphi$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>φ</em></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\theta$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>θ</em></span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Funcions i operadors</strong>:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Simbol</th>
+<th style="text-align: center;">Representació</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>$\cos$</code></td>
+<td style="text-align: center;"><span class="math inline">cos </span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\sin$</code></td>
+<td style="text-align: center;"><span class="math inline">sin </span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\lim$</code></td>
+<td style="text-align: center;"><span class="math inline">lim </span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\exp$</code></td>
+<td style="text-align: center;"><span class="math inline">exp </span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\to$</code></td>
+<td style="text-align: center;"><span class="math inline">→</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\infty$</code></td>
+<td style="text-align: center;"><span class="math inline">∞</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\equiv$</code></td>
+<td style="text-align: center;"><span class="math inline">≡</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\times$</code></td>
+<td style="text-align: center;"><span class="math inline">×</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Exponents i subíndex</strong></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Simbol</th>
+<th style="text-align: center;">Representació</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>$k_{n+1}$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>k</em><sub><em>n</em> + 1</sub></span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$n^2$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>n</em><sup>2</sup></span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$k_n^2$</code></td>
+<td style="text-align: center;"><span class="math inline"><em>k</em><sub><em>n</em></sub><sup>2</sup></span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Fraccions i binomis</strong></li>
+</ul>
+<p><span class="math display">$$\frac{n!}{k!(n-k)!}$$</span></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Simbol</th>
+<th style="text-align: center;">Representació</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>$$\frac{n!}{k!(n-k)!}$$</code></td>
+<td style="text-align: center;"><span class="math display">$$\frac{n!}{k!(n-k)!}$$</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\binom{n}{k}$</code></td>
+<td style="text-align: center;"><span class="math inline">$\binom{n}{k}$</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>$\frac{\frac{x}{1}}{x - y}$</code></td>
+<td style="text-align: center;"><span class="math inline">$\frac{\frac{x}{1}}{x - y}$</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$^3/_7$</code></td>
+<td style="text-align: center;"><span class="math inline"><sup>3</sup>/<sub>7</sub></span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Arrels</strong></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Simbol</th>
+<th style="text-align: center;">Representació</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>$\sqrt{k}$</code></td>
+<td style="text-align: center;"><span class="math inline">$\sqrt{k}$</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>$\sqrt[n]{k}$</code></td>
+<td style="text-align: center;"><span class="math inline">$\sqrt[n]{k}$</span></td>
+</tr>
+</tbody>
+</table>
+<p>Caldrà tindre en compte que alguns d’aquests símbols, sobre tot els més complexos, com ara les arrels o fraccions és possible que no tinguen la mateixa representació segons el format d’eixida i el motor amb què ho convertim. Ho tractarem més endavant.</p>
+<blockquote>
+<p><strong>Més informació!</strong></p>
+<p>Existeixen molts símbols més per utilitzar en expressions matemàtiques.</p>
+<p>Podeu consultar l’article d’<em>Archer Reilly</em>, <a href="https://csrgxtu.github.io/2015/03/20/Writing-Mathematic-Fomulars-in-Markdown/"><em>Writing Mathematic Fomulars in Markdown</em></a>, i de <em>Ryan Reece</em> <a href="http://rreece.github.io/sw/markdown-memo/05-math.html"><em>Mathematical expressions</em></a> per tal d’obtindre més informació sobre expressions matemàtiques en Markdown.</p>
+</blockquote>
+<h2 data-number="2.3" id="referències-i-informnació-addicional"><span class="header-section-number">2.3</span> Referències i informnació addicional</h2>
+<p>Per a més informació sobre Markdown podeu consultar:</p>
+<ul>
+<li>La guía de markdown en espanyol: <a href="https://markdown.es/">https://markdown.es/</a></li>
+<li>La sintaxi estesa de markdown a la web: <a href="https://www.markdownguide.org/extended-syntax">https://www.markdownguide.org/extended-syntax</a></li>
+<li>La secció dedicada a Markdown al <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Manual de Pandoc</a></li>
+<li>L’article de John Gruber <a href="https://daringfireball.net/projects/markdown/syntax">sobre la seua versió de Markdown</a>.</li>
+</ul> 
+    <script src="js/nav.js"></script>
+</body>
+
+</html>
