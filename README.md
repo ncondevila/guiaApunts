@@ -30,3 +30,4 @@ Què pretenem amb tot açò?
 |Jose P.|Rocher|
 |EDD|DAM|
 |Josep|Vila|
+|Carlos|Tro|
