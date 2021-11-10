@@ -31,3 +31,5 @@ Què pretenem amb tot açò?
 |EDD|DAM|
 |Josep|Vila|
 |Carlos|Tro|
+|Quique|Sanchez|
+
