@@ -29,3 +29,4 @@ Què pretenem amb tot açò?
 |Manuel|Cuevas|
 |Jose P.|Rocher|
 |EDD|DAM|
+|Josep|Vila|
