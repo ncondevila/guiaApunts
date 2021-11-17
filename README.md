@@ -32,4 +32,5 @@ Què pretenem amb tot açò?
 |Josep|Vila|
 |Carlos|Tro|
 |Quique|Sanchez|
+|Luis|Rosello|
 
