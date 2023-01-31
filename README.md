@@ -25,12 +25,5 @@ Què pretenem amb tot açò?
 
 |Nombre|Apellidos|
 |------|---------|
-|Rufino|Camarena Jiménez|
-|Manuel|Cuevas|
 |Jose P.|Rocher|
-|EDD|DAM|
-|Josep|Vila|
-|Carlos|Tro|
-|Quique|Sanchez|
-|Luis|Rosello|
 
