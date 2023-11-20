@@ -29,6 +29,5 @@ Què pretenem amb tot açò?
 |Carles|Roig|
 |Juanjo|Torres
 |Marc|Meola|
-
-
+|Víctor|Kolev|
 
