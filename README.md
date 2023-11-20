@@ -27,4 +27,6 @@ Què pretenem amb tot açò?
 |------|---------|
 |Jose P.|Rocher|
 |Carles|Roig|
+|Juanjo|Torres
+
 
