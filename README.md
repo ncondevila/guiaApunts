@@ -26,5 +26,7 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Jose P.|Rocher|
-|Juanjo|Torres|
+|Carles|Roig|
+|Juanjo|Torres
+
 
