@@ -25,6 +25,10 @@ Què pretenem amb tot açò?
 
 |Nombre|Apellidos|
 |------|---------|
+|Jose P.|Rocher|
+|Carles|Roig|
+|Juanjo|Torres
 |Marc|Meola|
+
 
 
