@@ -30,5 +30,6 @@ Què pretenem amb tot açò?
 |Juanjo|Torres
 |Marc|Meola|
 |Víctor|Kolev|
+|Louis|Payne|
 |Fran|Magraner|
 
