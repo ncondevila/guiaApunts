@@ -32,4 +32,4 @@ Què pretenem amb tot açò?
 |Víctor|Kolev|
 |Louis|Payne|
 |Fran|Magraner|
-
+|Pau|Pardo|
