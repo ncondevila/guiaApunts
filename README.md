@@ -34,4 +34,6 @@ Què pretenem amb tot açò?
 |Fran|Magraner|
 |Pau|Pardo|
 |Marc|Villacañas|
+|Juan R.|Páez|
 |Alejandro|Moya|
+
