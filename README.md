@@ -35,3 +35,8 @@ Què pretenem amb tot açò?
 |Pau|Pardo|
 |Marc|Villacañas|
 |Joana|Sarango|
+|Anna|Kostrzewa|
+|Juan R.|Páez|
+|Alejandro|Moya|
+|Hernán|Moreno|
+
