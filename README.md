@@ -41,4 +41,4 @@ Què pretenem amb tot açò?
 |Juan R.|Páez|
 |Alejandro|Moya|
 |Hernán|Moreno|
-
+|Hector|Santandreu|
