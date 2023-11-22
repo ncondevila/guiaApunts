@@ -34,6 +34,7 @@ Què pretenem amb tot açò?
 |Fran|Magraner|
 |Pau|Pardo|
 |Marc|Villacañas|
+|Jeaneth | Fuentes|
 |Joana|Sarango|
 |Anna|Kostrzewa|
 |Juan R.|Páez|
