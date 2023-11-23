@@ -45,4 +45,5 @@ Què pretenem amb tot açò?
 |Noa|Blanco|
 |Hector|Santandreu|
 |Hemera|Guerrero|
+|Bryan|Leonardi|
 
