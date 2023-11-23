@@ -16,29 +16,32 @@ Què pretenem amb tot açò?
 
 ## Guia de documents
 
-- [1. L'editor VSCode](VSCode/VSCode.md)
-- [2. El llenguatge Markdown](Markdown/Markdown.md)
-- [3. Pandoc](Pandoc/IntroPandoc.md)
-- [4. El bloc YAML](Pandoc/YAML.md)
-- [5. El paquet mdFactory](mdFactory/mdfactory.md)
-- [6. Presentacions](presentacions/guia.md)
 
-| Nombre    | Apellidos  |
-| --------- | ---------- |
-| Jose P.   | Rocher     |
-| Carles    | Roig       |
-| Juanjo    | Torres     |
-| Marc      | Meola      |
-| Víctor    | Kolev      |
-| Louis     | Payne      |
-| Fran      | Magraner   |
-| Pau       | Pardo      |
-| Marc      | Villacañas |
-| Aarón     | Fullana    |
-| Jeaneth   | Fuentes    |
-| Joana     | Sarango    |
-| Anna      | Kostrzewa  |
-| Juan R.   | Páez       |
-| Alejandro | Moya       |
-| Hernán    | Moreno     |
+* [1. L'editor VSCode](VSCode/VSCode.md)
+* [2. El llenguatge Markdown](Markdown/Markdown.md)
+* [3. Pandoc](Pandoc/IntroPandoc.md)
+* [4. El bloc YAML](Pandoc/YAML.md)
+* [5. El paquet mdFactory](mdFactory/mdfactory.md)
+* [6. Presentacions](presentacions/guia.md)
+
+|Nombre|Apellidos|
+|------|---------|
+|Jose P.|Rocher|
+|Carles|Roig|
+|Juanjo|Torres
+|Marc|Meola|
+|Víctor|Kolev|
+|Louis|Payne|
+|Fran|Magraner|
+|Pau|Pardo|
+|Marc|Villacañas|
+|Aarón|Fullana|
+|Jeaneth | Fuentes|
+|Joana|Sarango|
+|Anna|Kostrzewa|
+|Juan R.|Páez|
+|Alejandro|Moya|
+|Hernán|Moreno|
+|Hector|Santandreu|
 | Hemera    | Guerrero   |
+
