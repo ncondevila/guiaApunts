@@ -44,4 +44,4 @@ Què pretenem amb tot açò?
 |Hernán|Moreno|
 |Hector|Santandreu|
 | Hemera    | Guerrero   |
-
+|Bryan|Leonardi|
