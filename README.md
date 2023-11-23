@@ -15,7 +15,7 @@ Què pretenem amb tot açò?
 ![](img/anell.png)
 
 ## Guia de documents
-
+     
 
 * [1. L'editor VSCode](VSCode/VSCode.md)
 * [2. El llenguatge Markdown](Markdown/Markdown.md)
