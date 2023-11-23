@@ -42,6 +42,7 @@ Què pretenem amb tot açò?
 |Juan R.|Páez|
 |Alejandro|Moya|
 |Hernán|Moreno|
+|Noa|Blanco|
 |Hector|Santandreu|
 | Hemera    | Guerrero   |
 
