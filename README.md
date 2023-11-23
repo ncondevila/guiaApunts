@@ -44,5 +44,5 @@ Què pretenem amb tot açò?
 |Hernán|Moreno|
 |Noa|Blanco|
 |Hector|Santandreu|
-| Hemera    | Guerrero   |
+|Hemera|Guerrero|
 
