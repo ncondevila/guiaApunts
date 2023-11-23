@@ -1,5 +1,5 @@
 # guia d'apunts en Markdown
-
+   
 En aquest document, us deixem la documentació i les guíes del grup de treball de modernització metodològica per a cicles, on es proposa l'ús del format Markdown per a l'elaboració d'aquests.
 
 ## Beneficis
@@ -15,7 +15,7 @@ Què pretenem amb tot açò?
 ![](img/anell.png)
 
 ## Guia de documents
-
+     
 
 * [1. L'editor VSCode](VSCode/VSCode.md)
 * [2. El llenguatge Markdown](Markdown/Markdown.md)
@@ -36,12 +36,14 @@ Què pretenem amb tot açò?
 |Pau|Pardo|
 |Marc|Villacañas|
 |Aarón|Fullana|
-|Jeaneth | Fuentes|
+|Jeaneth|Fuentes|
 |Joana|Sarango|
 |Anna|Kostrzewa|
 |Juan R.|Páez|
 |Alejandro|Moya|
 |Hernán|Moreno|
+|Noa|Blanco|
 |Hector|Santandreu|
-| Hemera    | Guerrero   |
+|Hemera|Guerrero|
 |Bryan|Leonardi|
+
