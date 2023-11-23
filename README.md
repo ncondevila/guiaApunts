@@ -36,7 +36,7 @@ Què pretenem amb tot açò?
 |Pau|Pardo|
 |Marc|Villacañas|
 |Aarón|Fullana|
-|Jeaneth | Fuentes|
+|Jeaneth|Fuentes|
 |Joana|Sarango|
 |Anna|Kostrzewa|
 |Juan R.|Páez|
