@@ -46,4 +46,6 @@ Què pretenem amb tot açò?
 |Hector|Santandreu|
 |Hemera|Guerrero|
 |Bryan|Leonardi|
+|Amin|Khomsi|
+|Joshua|Fernandez|
 
