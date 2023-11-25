@@ -48,4 +48,5 @@ Què pretenem amb tot açò?
 |Bryan|Leonardi|
 |Mohamed Amin|Khomsi|
 |Joshua|Fernandez|
+|Cesar|Davila|
 
