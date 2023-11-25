@@ -47,5 +47,7 @@ Què pretenem amb tot açò?
 |Hemera|Guerrero|
 |Bryan|Leonardi|
 |yosari|venancio|
+|Mohamed Amin|Khomsi|
+|Joshua|Fernandez|
 
 
