@@ -52,4 +52,4 @@ Què pretenem amb tot açò?
 |Cesar|Davila|
 |Soulaimane|Boujnani|
 |Ivan|Atienza|
-
+|Julio|Matamet|
