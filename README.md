@@ -49,5 +49,6 @@ Què pretenem amb tot açò?
 |yosari|venancio|
 |Mohamed Amin|Khomsi|
 |Joshua|Fernandez|
+|Cesar|Davila|
 
 
