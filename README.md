@@ -52,6 +52,6 @@ Què pretenem amb tot açò?
 |Cesar|Davila|
 |Soulaimane|Boujnani|
 |Ivan|Atienza|
+|Pedro|Marti|
 |Giselle|Suazo|
 |Julio|Matamet|
-
