@@ -53,3 +53,5 @@ Què pretenem amb tot açò?
 |Soulaimane|Boujnani|
 |Ivan|Atienza|
 |Pedro|Marti|
+|Giselle|Suazo|
+|Julio|Matamet|
