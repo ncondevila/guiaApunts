@@ -55,3 +55,4 @@ Què pretenem amb tot açò?
 |Pedro|Marti|
 |Giselle|Suazo|
 |Julio|Matamet|
+|David|de la Cruz|
