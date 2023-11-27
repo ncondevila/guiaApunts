@@ -50,5 +50,6 @@ Què pretenem amb tot açò?
 |Mohamed Amin|Khomsi|
 |Joshua|Fernandez|
 |Cesar|Davila|
+|Soulaimane|Boujnani|
 
 
