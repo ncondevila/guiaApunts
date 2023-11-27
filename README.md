@@ -51,5 +51,5 @@ Què pretenem amb tot açò?
 |Joshua|Fernandez|
 |Cesar|Davila|
 |Soulaimane|Boujnani|
-
+|Ivan|Atienza|
 
