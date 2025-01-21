@@ -27,11 +27,3 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Jose P.|Rocher|
-|Joshua|Fernandez|
-|Cesar|Davila|
-|Soulaimane|Boujnani|
-|Ivan|Atienza|
-|Pedro|Marti|
-|Giselle|Suazo|
-|Julio|Matamet|
-|David|de la Cruz|
