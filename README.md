@@ -27,27 +27,6 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Jose P.|Rocher|
-|Carles|Roig|
-|Juanjo|Torres
-|Marc|Meola|
-|Víctor|Kolev|
-|Louis|Payne|
-|Fran|Magraner|
-|Pau|Pardo|
-|Marc|Villacañas|
-|Aarón|Fullana|
-|Jeaneth|Fuentes|
-|Joana|Sarango|
-|Anna|Kostrzewa|
-|Juan R.|Páez|
-|Alejandro|Moya|
-|Hernán|Moreno|
-|Noa|Blanco|
-|Hector|Santandreu|
-|Hemera|Guerrero|
-|Bryan|Leonardi|
-|yosari|venancio|
-|Mohamed Amin|Khomsi|
 |Joshua|Fernandez|
 |Cesar|Davila|
 |Soulaimane|Boujnani|
