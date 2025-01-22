@@ -28,3 +28,5 @@ Què pretenem amb tot açò?
 |------|---------|
 |Jose P.|Rocher|
 |Angel |Cantero|
+|Dayron|Notario|
+
