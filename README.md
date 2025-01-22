@@ -28,5 +28,8 @@ Què pretenem amb tot açò?
 |------|---------|
 |Jose P.|Rocher|
 |Angel |Cantero|
+|Noé|Conde|
 |Dayron|Notario|
+|Ezequiel|Menor|
+
 
