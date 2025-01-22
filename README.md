@@ -27,4 +27,9 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Jose P.|Rocher|
-|ivan F.|Frasquet|
+|Ivan F.|Frasquet|
+|Angel |Cantero|
+|Noé|Conde|
+|Dayron|Notario|
+|Ezequiel|Menor|
+
