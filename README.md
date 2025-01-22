@@ -27,4 +27,6 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Jose P.|Rocher|
+|Dayron|Notario|
 |Ezequiel|Menor|
+
