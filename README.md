@@ -28,3 +28,4 @@ Què pretenem amb tot açò?
 |------|---------|
 |Jose P.|Rocher|
 |Noé|Conde|
+|Dayron|Notario|
