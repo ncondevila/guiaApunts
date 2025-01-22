@@ -27,4 +27,4 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Jose P.|Rocher|
-|Noé|Conde|
+|Noé|Conde Vila|
